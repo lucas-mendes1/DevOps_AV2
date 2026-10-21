@@ -1,0 +1,17 @@
+name: Teste de Conectividade Google
+
+on:
+  push:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 * * * *' # Executa a cada hora automaticamente
+
+jobs:
+  ping-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Ping Google Test
+      run: |
+        echo "Iniciando teste de ping para o Google..."
+        ping -c 4 google.com
